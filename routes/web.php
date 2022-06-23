@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\BabyNameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,12 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/sugerir', function () {
-    return Inertia::render('CriarSugestao');
-})->middleware(['auth', 'verified'])->name('criarsugestao');
+Route::group(['middleware' => 'auth:sanctum'], function() {
+    Route::get('/sugerir', function () {
+        return Inertia::render('CriarSugestao');
+    })->middleware(['auth', 'verified'])->name('sugerir');
+
+    Route::post('sugerir', [BabyNameController::class, 'store'])->name('criarsugestao');
+  });
 
 require __DIR__.'/auth.php';

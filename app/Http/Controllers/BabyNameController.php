@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BabyName;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BabyNameController extends Controller
 {
@@ -17,10 +18,12 @@ class BabyNameController extends Controller
     {
         $babyname = new BabyName([
             'name' => $request->input('name'),
-            'detail' => $request->input('detail')
+            'gender' => $request->input('gender'),
+            'creator' => Auth::user()->name,
+            'votes' => 0
         ]);
         $babyname->save();
-        return response()->json('BabyName created!');
+        return response()->json('BabyName created!'); //Alterar essa "div"
     }
     public function show($id)
     {
