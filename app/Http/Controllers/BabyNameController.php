@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BabyName;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class BabyNameController extends Controller
 {
@@ -12,7 +13,9 @@ class BabyNameController extends Controller
     public function index()
     {
         $babynames = BabyName::all()->toArray();
-        return array_reverse($babynames);      
+        // $babynames = BabyName::all()->json();
+        return array_reverse($babynames);     
+        // return $babynames;
     }
     public function store(Request $request)
     {

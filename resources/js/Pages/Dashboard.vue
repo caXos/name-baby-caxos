@@ -1,8 +1,17 @@
 <script setup>
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import TableRow from '@/Components/TableRow.vue';
 import { Head } from '@inertiajs/inertia-vue3';
-</script>
 
+defineProps({
+    sugestoes: Object,
+    name: String,
+    gender: String,
+    creator: String,
+    votes: Number,
+    action: String
+});
+</script>
 <template>
 
     <Head title="Nomes Sugeridos" />
@@ -25,38 +34,26 @@ import { Head } from '@inertiajs/inertia-vue3';
                                     <th>Gênero</th>
                                     <th>Sugerido por</th>
                                     <th>Votos</th>
+                                    <th>Criada em</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>Nome1</th>
-                                    <th>Gênero1</th>
-                                    <th>Sugerido por1</th>
-                                    <th>Votos1</th>
-                                    <th>Ações1</th>
-                                </tr>
-                                <tr>
-                                    <th>Nome2</th>
-                                    <th>Gênero2</th>
-                                    <th>Sugerido por2</th>
-                                    <th>Votos2</th>
-                                    <th>Ações2</th>
-                                </tr>
-                                <tr>
-                                    <th>Nome3</th>
-                                    <th>Gênero3</th>
-                                    <th>Sugerido por3</th>
-                                    <th>Votos3</th>
-                                    <th>Ações3</th>
-                                </tr>
-                                <tr>
-                                    <th>Nome4</th>
-                                    <th>Gênero4</th>
-                                    <th>Sugerido por4</th>
-                                    <th>Votos4</th>
-                                    <th>Ações4</th>
-                                </tr>
+                                <!-- <tr v-for="sugestao in sugestoes" :key="sugestao.id">
+                                    <td>{{ sugestao.name }}</td>
+                                    <td>{{ sugestao.gender }}</td>
+                                    <td>{{ sugestao.creator }}</td>
+                                    <td>{{ sugestao.votes }}</td>
+                                    <td>{{ sugestao.created_at }}</td>
+                                    <td>Ação {{ sugestao.id }}</td>
+                                </tr> -->
+                                <TableRow v-for="sugestao in sugestoes" 
+                                :key="sugestao.id" 
+                                :name="sugestao.name" :gender="sugestao.gender" 
+                                :creator="sugestao.creator" 
+                                :votes="sugestao.votes"
+                                :created_at="sugestao.created_at" 
+                                :action="sugestao.id" />
                             </tbody>
                         </table>
                     </div>
@@ -76,3 +73,4 @@ import { Head } from '@inertiajs/inertia-vue3';
         padding: 2px;
     }
 </style>
+
