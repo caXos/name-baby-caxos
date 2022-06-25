@@ -11,6 +11,10 @@ defineProps({
     votes: Number,
     action: String
 });
+
+$(document).ready( function () {
+    $('#suggestionTable').DataTable();
+} );
 </script>
 <template>
 
@@ -27,7 +31,7 @@ defineProps({
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <table id="suggestionTable" class="display">
+                        <table id="suggestionTable" class="display w-full justify-items-center">
                             <thead>
                                 <tr>
                                     <th>Nome</th>
@@ -38,7 +42,7 @@ defineProps({
                                     <th>Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-center">
                                 <!-- <tr v-for="sugestao in sugestoes" :key="sugestao.id">
                                     <td>{{ sugestao.name }}</td>
                                     <td>{{ sugestao.gender }}</td>
