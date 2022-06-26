@@ -4,7 +4,11 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\BabyNameController;
+use App\Http\Controllers\LikeController;
 use App\Models\BabyName;
+use App\Models\Like;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +32,14 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $sugestoes = BabyName::all();
-    // error_log($sugestoes);
-    return Inertia::render('Dashboard', ['sugestoes' => $sugestoes]);
+    $user = Auth::user()->id;
+    // $likes = Like::all()->where('id_user',$user);
+    $likes = Like::where('id_user',$user)->get('id_babyname')->toJSON();
+    // $likes = Like::where('id_user',$user)->get('id_babyname');
+    // $string = implode(" ",$likes);
+    // error_log($string);
+
+    return Inertia::render('Dashboard', ['sugestoes' => $sugestoes, 'likes_user' => $likes]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
@@ -38,6 +48,10 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     })->middleware(['auth', 'verified'])->name('sugerir');
 
     Route::post('sugerir', [BabyNameController::class, 'store'])->name('criarsugestao');
+
+    // Route::get('/liked/{id_babyname}', [LikeController::class, 'getLiked'])->name('getLiked');
+    Route::post('/like/{id_babyname}', [LikeController::class, 'like'])->name('like');
+    Route::post('/dislike/{id_babyname}', [LikeController::class, 'dislike'])->name('dislike');
   });
 
 require __DIR__.'/auth.php';

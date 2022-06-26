@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fundo-rosa {
+    background-color: #fecaca !important;
+}
+
+.fundo-azul {
+    background-color: #cffafe !important;
+}
+
+#back {
+    transition: background-color 1000ms ease;
+}

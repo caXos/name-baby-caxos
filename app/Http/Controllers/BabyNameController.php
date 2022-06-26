@@ -23,7 +23,8 @@ class BabyNameController extends Controller
             'name' => $request->input('name'),
             'gender' => $request->input('gender'),
             'creator' => Auth::user()->name,
-            'votes' => 0
+            'creator_id' => Auth::user()->id,
+            'likes' => 0
         ]);
         $babyname->save();
         return response()->json('BabyName created!'); //Alterar essa "div"
@@ -45,4 +46,6 @@ class BabyNameController extends Controller
         $babyname->delete();
         return response()->json('BabyName deleted!');
     }
+
+    
 }

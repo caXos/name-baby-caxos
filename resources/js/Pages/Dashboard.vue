@@ -5,11 +5,13 @@ import { Head } from '@inertiajs/inertia-vue3';
 
 defineProps({
     sugestoes: Object,
-    name: String,
-    gender: String,
-    creator: String,
-    votes: Number,
-    action: String
+    likes_user: String
+    // name: String,
+    // gender: String,
+    // creator: String,
+    // creator_id: Number,
+    // likes: Number,
+    // action: String
 });
 
 $(document).ready( function () {
@@ -37,27 +39,21 @@ $(document).ready( function () {
                                     <th>Nome</th>
                                     <th>Gênero</th>
                                     <th>Sugerido por</th>
-                                    <th>Votos</th>
                                     <th>Criada em</th>
+                                    <th>Likes</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <!-- <tr v-for="sugestao in sugestoes" :key="sugestao.id">
-                                    <td>{{ sugestao.name }}</td>
-                                    <td>{{ sugestao.gender }}</td>
-                                    <td>{{ sugestao.creator }}</td>
-                                    <td>{{ sugestao.votes }}</td>
-                                    <td>{{ sugestao.created_at }}</td>
-                                    <td>Ação {{ sugestao.id }}</td>
-                                </tr> -->
                                 <TableRow v-for="sugestao in sugestoes" 
                                 :key="sugestao.id" 
-                                :name="sugestao.name" :gender="sugestao.gender" 
+                                :name="sugestao.name" 
+                                :gender="sugestao.gender" 
                                 :creator="sugestao.creator" 
-                                :votes="sugestao.votes"
+                                :likes="sugestao.likes"
                                 :created_at="sugestao.created_at" 
-                                :action="sugestao.id" />
+                                :action="sugestao.id"
+                                :likes_user="likes_user" />
                             </tbody>
                         </table>
                     </div>
