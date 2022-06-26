@@ -28,6 +28,11 @@ class LikeController extends Controller
         $value = $babyname->likes;
         $babyname->likes = $value+1;
         $babyname->save();
+        $like = new Like([
+            'id_user' => Auth::user()->id,
+            'id_babyname' => $babyname->id
+        ]);
+        $like->save();
         return response()->json([
             'message'=>'Thanks',
         ]);
@@ -35,10 +40,12 @@ class LikeController extends Controller
 
     public function dislike(Request $request)
     {
-        $babyname = BabyName::find($request->babyname);
+        $babyname = BabyName::find($request->id_babyname);
         $value = $babyname->likes;
         $babyname->likes = $value-1;
         $babyname->save();
+        $like = Like::where('id_user',Auth::user()->id)->where('id_babyname',$babyname->id);
+        $like->delete();
         return response()->json([
             'message'=>'Thanks',
         ]);

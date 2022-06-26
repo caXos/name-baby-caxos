@@ -14,9 +14,34 @@ defineProps({
     // action: String
 });
 
-$(document).ready( function () {
-    $('#suggestionTable').DataTable();
-} );
+$(document).ready(function () {
+    $('#suggestionTable').DataTable(
+        {
+            language: {
+                processing: "Processando...",
+                search: "Pesquisar:",
+                lengthMenu: "Mostrar _MENU_ elementos",
+                info: "Mostrando os elementos de _START_ a _END_ de um total de _TOTAL_ ",
+                infoEmpty: "Mostrando os elementos de 0 a 0 de um total de 0",
+                infoFiltered: "(filtrados de um total de _MAX_ elementos)",
+                infoPostFix: "",
+                loadingRecords: "Carregando...",
+                zeroRecords: "Nada para sugestões paramostrar",
+                emptyTable: "Não há nenhuma sugestão nesta tabela!",
+                paginate: {
+                    first: "Primeira",
+                    previous: "Anterior",
+                    next: "Próxima",
+                    last: "Última"
+                },
+                aria: {
+                    sortAscending: ": Ordem crescente",
+                    sortDescending: ": Ordem decrescente"
+                }
+            }
+        }
+    );
+});
 </script>
 <template>
 
@@ -45,15 +70,9 @@ $(document).ready( function () {
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <TableRow v-for="sugestao in sugestoes" 
-                                :key="sugestao.id" 
-                                :name="sugestao.name" 
-                                :gender="sugestao.gender" 
-                                :creator="sugestao.creator" 
-                                :likes="sugestao.likes"
-                                :created_at="sugestao.created_at" 
-                                :action="sugestao.id"
-                                :likes_user="likes_user" />
+                                <TableRow v-for="sugestao in sugestoes" :key="sugestao.id" :name="sugestao.name"
+                                    :gender="sugestao.gender" :creator="sugestao.creator" :likes="sugestao.likes"
+                                    :created_at="sugestao.created_at" :action="sugestao.id" :likes_user="likes_user" />
                             </tbody>
                         </table>
                     </div>
@@ -64,13 +83,15 @@ $(document).ready( function () {
 </template>
 
 <style scoped>
-    tr {
-        border: 1px solid black;
-        border-radius: 5px;
-    }
-    th, td {
-        margin: 3px;
-        padding: 2px;
-    }
+tr {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+th,
+td {
+    margin: 3px;
+    padding: 2px;
+}
 </style>
 

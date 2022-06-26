@@ -21,14 +21,14 @@ or
 {{ route('admin.editIndustry', ['id'=>1, 'something'=>42]) }}
 */
 function addLike (){
-    this.likes++;
+    // this.likes++;
     // console.log("addLike");
-    route('like', ['id_babyname',this.action]); //talvez colocar um return ou um return redirect()-> nessa lilnha ou talvez até um Inertia::render, mas não sei se aqui é php/laravel
+    // return route('like', ['id_babyname',this.action]); //talvez colocar um return ou um return redirect()-> nessa lilnha ou talvez até um Inertia::render, mas não sei se aqui é php/laravel
 }
 function removeLike (){
     this.likes--;
-    // console.log("removeLike");
-    route('dislike', ['id_babyname',this.action]);
+    console.log("removeLike");
+    // return route('dislike', ['id_babyname',this.action]);
 }
 
 // methods: {
@@ -53,14 +53,14 @@ function removeLike (){
         <td>{{ gender }}</td>
         <td>{{ creator }}</td>
         <td>{{ new Date(created_at).toLocaleString() }}</td>
-        <td v-bind="likes">{{ likes }}</td>
+        <td>{{ likes }}</td>
         <td v-if="likes_user.includes(action)">
-            <Link as="button" v-on:click="removeLike();">
+            <Link :href="route('dislike', [action])" method="post" as="button" v-on:click="removeLike();">
                 <i class="fa-regular fa-thumbs-up text-green-600 font-bold" title="Remover Like"></i>
             </Link>
         </td>
         <td v-else>
-            <Link as="button" v-on:click="addLike();">
+            <Link :href="route('like', [action])" method="post" as="button" v-on:click="addLike();">
                 <i class="fa-regular fa-thumbs-up text-gray-600" title="Adicionar Like"></i>
             </Link>
         </td>
@@ -70,14 +70,14 @@ function removeLike (){
         <td>{{ gender }}</td>
         <td>{{ creator }}</td>
         <td>{{ new Date(created_at).toLocaleString() }}</td>
-        <td v-bind="likes">{{ likes }}</td>
+        <td>{{ likes }}</td>
         <td v-if="likes_user.includes(action)">
-            <Link as="button" v-on:click="removeLike();">
+            <Link :href="route('dislike', [action])" method="post" as="button" v-on:click="removeLike();">
                 <i class="fa-regular fa-thumbs-up text-green-600 font-bold" title="Remover Like"></i>
             </Link>
         </td>
         <td v-else>
-            <Link as="button" v-on:click="addLike();">
+            <Link :href="route('like', [action])" method="post" as="button" v-on:click="addLike();">
                 <i class="fa-regular fa-thumbs-up text-gray-600" title="Adicionar Like"></i>
             </Link>
         </td>
@@ -87,14 +87,14 @@ function removeLike (){
         <td>{{ gender }}</td>
         <td>{{ creator }}</td>
         <td>{{ new Date(created_at).toLocaleString() }}</td>
-        <td v-bind="likes">{{ likes }}</td>
+        <td>{{ likes }}</td>
         <td v-if="likes_user.includes(action)">
-            <Link as="button" v-on:click="removeLike();">
+            <Link :href="route('dislike', [action])" method="post" as="button" v-on:click="removeLike();">
                 <i class="fa-regular fa-thumbs-up text-green-600 font-bold" title="Remover Like"></i>
             </Link>
         </td>
         <td v-else>
-            <Link as="button" v-on:click="addLike();">
+            <Link :href="route('like', [action])" method="post" as="button" v-on:click="addLike();">
                 <i class="fa-regular fa-thumbs-up text-gray-600" title="Adicionar Like"></i>
             </Link>
         </td>

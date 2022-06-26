@@ -22052,16 +22052,14 @@ __webpack_require__.r(__webpack_exports__);
     {{ route('admin.editIndustry', ['id'=>1, 'something'=>42]) }}
     */
 
-    function addLike() {
-      this.likes++; // console.log("addLike");
-
-      route('like', ['id_babyname', this.action]); //talvez colocar um return ou um return redirect()-> nessa lilnha ou talvez até um Inertia::render, mas não sei se aqui é php/laravel
+    function addLike() {// this.likes++;
+      // console.log("addLike");
+      // return route('like', ['id_babyname',this.action]); //talvez colocar um return ou um return redirect()-> nessa lilnha ou talvez até um Inertia::render, mas não sei se aqui é php/laravel
     }
 
     function removeLike() {
-      this.likes--; // console.log("removeLike");
-
-      route('dislike', ['id_babyname', this.action]);
+      this.likes--;
+      console.log("removeLike"); // return route('dislike', ['id_babyname',this.action]);
     } // methods: {
     //     addLike: (event) => {
     //         likes--;
@@ -22710,7 +22708,30 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     $(document).ready(function () {
-      $('#suggestionTable').DataTable();
+      $('#suggestionTable').DataTable({
+        language: {
+          processing: "Processando...",
+          search: "Pesquisar:",
+          lengthMenu: "Mostrar _MENU_ elementos",
+          info: "Mostrando os elementos de _START_ a _END_ de um total de _TOTAL_ ",
+          infoEmpty: "Mostrando os elementos de 0 a 0 de um total de 0",
+          infoFiltered: "(filtrados de um total de _MAX_ elementos)",
+          infoPostFix: "",
+          loadingRecords: "Carregando...",
+          zeroRecords: "Nada para sugestões paramostrar",
+          emptyTable: "Não há nenhuma sugestão nesta tabela!",
+          paginate: {
+            first: "Primeira",
+            previous: "Anterior",
+            next: "Próxima",
+            last: "Última"
+          },
+          aria: {
+            sortAscending: ": Ordem crescente",
+            sortDescending: ": Ordem decrescente"
+          }
+        }
+      });
     });
     var __returned__ = {
       BreezeAuthenticatedLayout: _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -23207,9 +23228,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.created_at).toLocaleString()), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeProps)((0,vue__WEBPACK_IMPORTED_MODULE_0__.guardReactiveProps)($props.likes)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 17
-  /* TEXT, FULL_PROPS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 1
+  /* TEXT */
   ), $props.likes_user.includes($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('dislike', [$props.action]),
+    method: "post",
     as: "button",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       $setup.removeLike();
@@ -23221,7 +23244,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  }, 8
+  /* PROPS */
+  , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('like', [$props.action]),
+    method: "post",
     as: "button",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       $setup.addLike();
@@ -23233,7 +23260,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]))])) : $props.gender == 'Masculino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  }, 8
+  /* PROPS */
+  , ["href"])]))])) : $props.gender == 'Masculino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23241,9 +23270,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.created_at).toLocaleString()), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeProps)((0,vue__WEBPACK_IMPORTED_MODULE_0__.guardReactiveProps)($props.likes)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 17
-  /* TEXT, FULL_PROPS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 1
+  /* TEXT */
   ), $props.likes_user.includes($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('dislike', [$props.action]),
+    method: "post",
     as: "button",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       $setup.removeLike();
@@ -23255,7 +23286,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  }, 8
+  /* PROPS */
+  , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('like', [$props.action]),
+    method: "post",
     as: "button",
     onClick: _cache[3] || (_cache[3] = function ($event) {
       $setup.addLike();
@@ -23267,7 +23302,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  }, 8
+  /* PROPS */
+  , ["href"])]))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23275,9 +23312,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.created_at).toLocaleString()), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeProps)((0,vue__WEBPACK_IMPORTED_MODULE_0__.guardReactiveProps)($props.likes)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 17
-  /* TEXT, FULL_PROPS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 1
+  /* TEXT */
   ), $props.likes_user.includes($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('dislike', [$props.action]),
+    method: "post",
     as: "button",
     onClick: _cache[4] || (_cache[4] = function ($event) {
       $setup.removeLike();
@@ -23289,7 +23328,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  }, 8
+  /* PROPS */
+  , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('like', [$props.action]),
+    method: "post",
     as: "button",
     onClick: _cache[5] || (_cache[5] = function ($event) {
       $setup.addLike();
@@ -23301,7 +23344,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]))]));
+  }, 8
+  /* PROPS */
+  , ["href"])]))]));
 }
 
 /***/ }),
@@ -24854,7 +24899,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ntr[data-v-097ba13b] {\r\n        border: 1px solid black;\r\n        border-radius: 5px;\n}\nth[data-v-097ba13b], td[data-v-097ba13b] {\r\n        margin: 3px;\r\n        padding: 2px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntr[data-v-097ba13b] {\r\n    border: 1px solid black;\r\n    border-radius: 5px;\n}\nth[data-v-097ba13b],\r\ntd[data-v-097ba13b] {\r\n    margin: 3px;\r\n    padding: 2px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
