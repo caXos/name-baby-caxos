@@ -4,6 +4,7 @@ import BreezeGuestLayout from '@/Layouts/Guest.vue';
 import BreezeInput from '@/Components/Input.vue';
 import BreezeLabel from '@/Components/Label.vue';
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
+import BreezeCheckbox from '@/Components/Checkbox.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 
 const form = useForm({
@@ -46,6 +47,13 @@ const submit = () => {
             <div class="mt-4">
                 <BreezeLabel for="password_confirmation" value="Repita a senha" />
                 <BreezeInput id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
+            </div>
+
+            <div class="block mt-4">
+                <label class="flex items-center">
+                    <BreezeCheckbox name="terms" v-model="form.terms" required/>
+                    <span class="ml-2 text-sm text-gray-600">Declaro que li os <a href="#" target="_blank">Termos e Condições</a></span>
+                </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
