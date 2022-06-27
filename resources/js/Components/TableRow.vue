@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3';
-defineProps(['name', 'gender', 'creator', 'creator_id', 'likes', 'created_at', 'action', 'likes_user']);
+defineProps(['name', 'gender', 'creator', 'creator_id', 'likes', 'created_at', 'action', 'likes_user','updated']);
 // defineProps(['name', 'gender', 'creator', 'creator_id', 'likes', 'created_at', 'action']);
 // defineProps({
 //     sugestoes: Object,
@@ -25,9 +25,11 @@ function addLike (){
     // console.log("addLike");
     // return route('like', ['id_babyname',this.action]); //talvez colocar um return ou um return redirect()-> nessa lilnha ou talvez até um Inertia::render, mas não sei se aqui é php/laravel
 }
-function removeLike (){
-    this.likes--;
+function removeLike (id_babyname){
+    this.updated = !this.updated;
     console.log("removeLike");
+    // return axios.post('/dislike/'+action);
+    return axios.post(route('dislike', [id_babyname]));
     // return route('dislike', ['id_babyname',this.action]);
 }
 
@@ -48,19 +50,19 @@ function removeLike (){
 </script>
 
 <template>
-    <tr v-if="gender == 'Feminino'" class="bg-pink-100 hover:bg-pink-100 hover:text-pink-900">
+    <tr v-if="gender == 'Feminino'" :key="updated" class="bg-pink-100 hover:bg-pink-100 hover:text-pink-900">
         <td>{{ name }}</td>
         <td>{{ gender }}</td>
         <td>{{ creator }}</td>
         <td>{{ new Date(created_at).toLocaleString() }}</td>
         <td>{{ likes }}</td>
         <td v-if="likes_user.includes(action)">
-            <Link :href="route('dislike', [action])" method="post" as="button" v-on:click="removeLike();">
+            <Link :href="route('dislike',[action])" method="post" as="button">
                 <i class="fa-regular fa-thumbs-up text-green-600 font-bold" title="Remover Like"></i>
             </Link>
         </td>
         <td v-else>
-            <Link :href="route('like', [action])" method="post" as="button" v-on:click="addLike();">
+            <Link :href="route('like', [action])" method="post" as="button">
                 <i class="fa-regular fa-thumbs-up text-gray-600" title="Adicionar Like"></i>
             </Link>
         </td>
@@ -72,12 +74,12 @@ function removeLike (){
         <td>{{ new Date(created_at).toLocaleString() }}</td>
         <td>{{ likes }}</td>
         <td v-if="likes_user.includes(action)">
-            <Link :href="route('dislike', [action])" method="post" as="button" v-on:click="removeLike();">
+            <Link :href="route('dislike', [action])" method="post" as="button">
                 <i class="fa-regular fa-thumbs-up text-green-600 font-bold" title="Remover Like"></i>
             </Link>
         </td>
         <td v-else>
-            <Link :href="route('like', [action])" method="post" as="button" v-on:click="addLike();">
+            <Link :href="route('like', [action])" method="post" as="button">
                 <i class="fa-regular fa-thumbs-up text-gray-600" title="Adicionar Like"></i>
             </Link>
         </td>
@@ -89,12 +91,12 @@ function removeLike (){
         <td>{{ new Date(created_at).toLocaleString() }}</td>
         <td>{{ likes }}</td>
         <td v-if="likes_user.includes(action)">
-            <Link :href="route('dislike', [action])" method="post" as="button" v-on:click="removeLike();">
+            <Link :href="route('dislike',[action])" method="post" as="button">
                 <i class="fa-regular fa-thumbs-up text-green-600 font-bold" title="Remover Like"></i>
             </Link>
         </td>
         <td v-else>
-            <Link :href="route('like', [action])" method="post" as="button" v-on:click="addLike();">
+            <Link :href="route('like', [action])" method="post" as="button">
                 <i class="fa-regular fa-thumbs-up text-gray-600" title="Adicionar Like"></i>
             </Link>
         </td>

@@ -20,7 +20,7 @@ $(document).ready(function () {
             language: {
                 processing: "Processando...",
                 search: "Pesquisar:",
-                lengthMenu: "Mostrar _MENU_ elementos",
+                lengthMenu: "Quantos elementos mostrar _MENU_",
                 info: "Mostrando os elementos de _START_ a _END_ de um total de _TOTAL_ ",
                 infoEmpty: "Mostrando os elementos de 0 a 0 de um total de 0",
                 infoFiltered: "(filtrados de um total de _MAX_ elementos)",

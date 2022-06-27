@@ -27,7 +27,7 @@ class BabyNameController extends Controller
             'likes' => 0
         ]);
         $babyname->save();
-        return response()->json('BabyName created!'); //Alterar essa "div"
+        return response()->json('Sugestão criada!'); //Alterar essa "div"
     }
     public function show($id)
     {

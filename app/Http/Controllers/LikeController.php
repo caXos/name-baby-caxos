@@ -14,12 +14,8 @@ class LikeController extends Controller
         $user = Auth::user()->id;
         $babyname = BabyName::find($request->id_babyname);
         $like = Like::where('id_user',$user)->where('id_babyname',$babyname->id)->first();
-        if ($like != null) return response()->json([
-            'message'=>'Esse usuário já deu like nessa sugestão',
-        ]);
-        else return response()->json([
-            'message'=>'Esse usuário não deu like nessa sugestão',
-        ]);
+        if ($like != null) return response()->json('Esse usuário já deu like nessa sugestão');
+        else return response()->json('Esse usuário não deu like nessa sugestão');
     }
 
     public function like(Request $request)
@@ -33,9 +29,7 @@ class LikeController extends Controller
             'id_babyname' => $babyname->id
         ]);
         $like->save();
-        return response()->json([
-            'message'=>'Thanks',
-        ]);
+        return response()->json('Like adicionado!');
     }
 
     public function dislike(Request $request)
@@ -46,8 +40,6 @@ class LikeController extends Controller
         $babyname->save();
         $like = Like::where('id_user',Auth::user()->id)->where('id_babyname',$babyname->id);
         $like->delete();
-        return response()->json([
-            'message'=>'Thanks',
-        ]);
+        return response()->json('Like removido!');
     }
 }
