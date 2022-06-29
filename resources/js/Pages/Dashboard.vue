@@ -5,7 +5,7 @@ import { Head } from '@inertiajs/inertia-vue3';
 
 defineProps({
     sugestoes: Object,
-    likes_user: String
+    likes_user: Object
     // name: String,
     // gender: String,
     // creator: String,

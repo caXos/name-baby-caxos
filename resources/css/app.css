@@ -13,3 +13,7 @@
 #back {
     transition: background-color 1000ms ease;
 }
+
+[name=suggestionTable_length] {
+    width: 65px;
+}

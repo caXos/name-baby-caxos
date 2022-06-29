@@ -52,7 +52,7 @@ const submit = () => {
             <div class="block mt-4">
                 <label class="flex items-center">
                     <BreezeCheckbox name="terms" v-model="form.terms" required/>
-                    <span class="ml-2 text-sm text-gray-600">Declaro que li os <a href="#" target="_blank">Termos e Condições</a></span>
+                    <span class="ml-2 text-sm text-gray-600">Declaro que li os <a class="underline hover:font-bold" href="/termsandconditions.html" target="_blank">Termos e Condições</a></span>
                 </label>
             </div>
 

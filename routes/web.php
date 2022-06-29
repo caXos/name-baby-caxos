@@ -33,9 +33,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     $sugestoes = BabyName::all();
     $user = Auth::user()->id;
-    // $likes = Like::all()->where('id_user',$user);
-    $likes = Like::where('id_user',$user)->get('id_babyname')->toJSON();
-    // $likes = Like::where('id_user',$user)->get('id_babyname');
+    // $likes = Like::where('id_user',$user)->get('id_babyname')->value('id_babyname');
+    // $likes = Like::where('id_user',$user)->get('id_babyname')->toArray(); //essa é a linha que mais funciona
+    // $likes = Like::where('id_user',$user)->get('id_babyname')->toJSON();
+    $likes = LikeController::getLikes($user);
+
     // $string = implode(" ",$likes);
     // error_log($string);
 

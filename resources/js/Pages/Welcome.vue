@@ -57,7 +57,8 @@ setInterval(function () {
                 </div>
             </div>
             <div class="ml-12">
-                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                <div class="mt-2 text-gray-800 dark:text-gray-400">
+                <!-- <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm"> -->
                     <div>
                         <ol type="1">
                             <li>Clique em "Registrar" e preencha seus dados para criar uma conta</li>

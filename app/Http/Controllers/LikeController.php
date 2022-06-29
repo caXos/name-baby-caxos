@@ -18,6 +18,18 @@ class LikeController extends Controller
         else return response()->json('Esse usuário não deu like nessa sugestão');
     }
 
+    public static function getLikes(int $id_user) {
+        // $likes = Like::where('id_user',$id_user)->get('id_babyname');
+        $likes = Like::where('id_user',$id_user)->get('id_babyname')->toArray('id_babyname');
+        // $likes = Like::where('id_user',$id_user)->get('id_babyname')->toJSON();
+        // $likes = Like::where('id_user',$id_user)->get('id_babyname')->toArray();
+        //return $likes;
+        // error_log(response()->json($likes));
+        // error_log($likes);
+        // return response()->json($likes);
+        return response($likes);
+    }
+
     public function like(Request $request)
     {
         $babyname = BabyName::find($request->id_babyname);

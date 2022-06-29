@@ -22025,63 +22025,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+function curtir(id) {
+  // localUserLikes.push(id);
+  console.log(id, this.localUserLikes.original[0].id_babyname); //so far so good! falta achar o iterador
+}
+
+function descurtir(id) {// localUserLikes.splice(localUserLikes.findIndex((i) => i === id), 1);
+}
+
+
+
+ // const props = defineProps(['name', 'gender', 'creator', 'creator_id', 'likes', 'created_at', 'action', 'likes_user']);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   __name: 'TableRow',
-  props: ['name', 'gender', 'creator', 'creator_id', 'likes', 'created_at', 'action', 'likes_user', 'updated'],
+  props: {
+    name: String,
+    gender: String,
+    creator: String,
+    creator_id: Number,
+    likes: Number,
+    created_at: String,
+    action: Number,
+    likes_user: Object
+  },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
-    expose(); // defineProps(['name', 'gender', 'creator', 'creator_id', 'likes', 'created_at', 'action']);
-    // defineProps({
-    //     sugestoes: Object,
-    //     likes_user: Object,
-    //     name: String,
-    //     gender: String,
-    //     creator: String,
-    //     creator_id: Number,
-    //     likes: Number,
-    //     action: Number,
-    //     created_at: String
-    // });
+    expose();
+    var props = __props; // const localLikes = ref(...likes)
 
-    /*
-    {{ route('admin.editIndustry', 1) }}
-    or
-    {{ route('admin.editIndustry', ['id'=>1]) }}
-    or
-    {{ route('admin.editIndustry', ['id'=>1, 'something'=>42]) }}
-    */
-
-    function addLike() {// this.likes++;
-      // console.log("addLike");
-      // return route('like', ['id_babyname',this.action]); //talvez colocar um return ou um return redirect()-> nessa lilnha ou talvez até um Inertia::render, mas não sei se aqui é php/laravel
-    }
-
-    function removeLike(id_babyname) {
-      this.updated = !this.updated;
-      console.log("removeLike"); // return axios.post('/dislike/'+action);
-
-      return axios.post(route('dislike', [id_babyname])); // return route('dislike', ['id_babyname',this.action]);
-    } // methods: {
-    //     addLike: (event) => {
-    //         likes--;
-    //         console.log("disliked");
-    //         // route('dislike',[event]);
-    //         console.log(event);
-    //     }
-    //     removeLike: (event) => {
-    //         likes++;
-    //         console.log("liked");
-    //         // route('like',[event]);
-    //         console.log(event);
-    //     }
-    // }
-
+    var localUserLikes = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.likes_user);
+    var localLikes = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.likes); // const localUserLikes = ref({...props.likes_user});
 
     var __returned__ = {
-      addLike: addLike,
-      removeLike: removeLike,
-      Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
+      curtir: curtir,
+      descurtir: descurtir,
+      props: props,
+      localUserLikes: localUserLikes,
+      localLikes: localLikes,
+      Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
+      computed: vue__WEBPACK_IMPORTED_MODULE_1__.computed,
+      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -22701,7 +22686,7 @@ __webpack_require__.r(__webpack_exports__);
   __name: 'Dashboard',
   props: {
     sugestoes: Object,
-    likes_user: String // name: String,
+    likes_user: Object // name: String,
     // gender: String,
     // creator: String,
     // creator_id: Number,
@@ -23147,84 +23132,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  key: 0
+  key: 0,
+  "class": "bg-pink-100 hover:bg-pink-100 hover:text-pink-900"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-regular fa-thumbs-up text-green-600 font-bold",
-  title: "Remover Like"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_3 = {
-  key: 1
-};
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-regular fa-thumbs-up text-gray-600",
-  title: "Adicionar Like"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_5 = {
+var _hoisted_2 = {
   key: 1,
   "class": "bg-blue-100 hover:bg-blue-100 hover:text-blue-900"
 };
-var _hoisted_6 = {
-  key: 0
-};
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-regular fa-thumbs-up text-green-600 font-bold",
-  title: "Remover Like"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_8 = {
-  key: 1
-};
-
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-regular fa-thumbs-up text-gray-600",
-  title: "Adicionar Like"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_10 = {
+var _hoisted_3 = {
   key: 2,
   "class": "bg-gray-100 hover:bg-gray-200 hover:text-gray-900"
 };
-var _hoisted_11 = {
-  key: 0
-};
-
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-regular fa-thumbs-up text-green-600 font-bold",
-  title: "Remover Like"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_13 = {
-  key: 1
-};
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-regular fa-thumbs-up text-gray-600",
-  title: "Adicionar Like"
-}, null, -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return $props.gender == 'Feminino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
-    key: $props.updated,
-    "class": "bg-pink-100 hover:bg-pink-100 hover:text-pink-900"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  return $props.gender == 'Feminino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23232,35 +23152,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.created_at).toLocaleString()), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.localLikes), 1
   /* TEXT */
-  ), $props.likes_user.includes($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('dislike', [$props.action]),
-    method: "post",
-    as: "button"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_2];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('like', [$props.action]),
-    method: "post",
-    as: "button"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])]))])) : $props.gender == 'Masculino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action) + " ", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $setup.curtir($props.action);
+    })
+  }, "❤")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \"localUserLikes.0.id_babyname\"\n        data.filter(x => x.name === \"Blofeld\"); "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td v-if=\"localUserLikes.includes(action)\">\n            <Link :href=\"route('dislike',[action])\" method=\"post\" as=\"button\" :click=\"descurtir(action)\">\n                <i class=\"fa-regular fa-thumbs-up text-green-600 font-bold\" title=\"Remover Like\"></i>\n            </Link>\n        </td>\n        <td v-else>\n            <Link :href=\"route('like', [action])\" method=\"post\" as=\"button\" :click=\"curtir\">\n                <i class=\"fa-regular fa-thumbs-up text-gray-600\" title=\"Adicionar Like\"></i>\n            </Link>\n        </td> ")])) : $props.gender == 'Masculino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23268,35 +23168,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.created_at).toLocaleString()), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.localLikes), 1
   /* TEXT */
-  ), $props.likes_user.includes($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('dislike', [$props.action]),
-    method: "post",
-    as: "button"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_7];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('like', [$props.action]),
-    method: "post",
-    as: "button"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_9];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])]))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action), 1
+  /* TEXT */
+  )])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23304,35 +23180,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.created_at).toLocaleString()), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.likes), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.localLikes), 1
   /* TEXT */
-  ), $props.likes_user.includes($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('dislike', [$props.action]),
-    method: "post",
-    as: "button"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_12];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('like', [$props.action]),
-    method: "post",
-    as: "button"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_14];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])]))]));
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action), 1
+  /* TEXT */
+  )]));
 }
 
 /***/ }),
@@ -23986,7 +23838,8 @@ var _hoisted_6 = {
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "ml-2 text-sm text-gray-600"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Declaro que li os "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
+  "class": "underline hover:font-bold",
+  href: "/termsandconditions.html",
   target: "_blank"
 }, "Termos e Condições")], -1
 /* HOISTED */
@@ -24566,7 +24419,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l bg-white rounded-md border-2 border-gray-400 drop-shadow\" data-v-317d1a6e><div class=\"flex items-center justify-center\" data-v-317d1a6e><img src=\"/images/cutebaby.svg\" alt=\"Name Baby caXos\" class=\"welcome-img\" title=\"Name Baby caXos\" data-v-317d1a6e></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Name Baby caXos </div></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Vamos dar nome ao bebê caXos? </div></div><div class=\"ml-12\" data-v-317d1a6e><div class=\"mt-2 text-gray-600 dark:text-gray-400 text-sm\" data-v-317d1a6e><div data-v-317d1a6e><ol type=\"1\" data-v-317d1a6e><li data-v-317d1a6e>Clique em &quot;Registrar&quot; e preencha seus dados para criar uma conta</li><li data-v-317d1a6e>Já logado, acesse a página &quot;Sugerir Nome&quot;</li><li data-v-317d1a6e>Pronto! Sua sugestão aparecerá no &quot;Dashboard&quot;, <br data-v-317d1a6e>onde também é possíve visualizar as demais sugestões, bem como votar nas sugestões que você acha interessante</li><li data-v-317d1a6e>Você pode fazer quantas sugestões quiser, <br data-v-317d1a6e>mas só pode dar um voto (a favor ou contra) por sugestão</li></ol></div></div></div></div>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l bg-white rounded-md border-2 border-gray-400 drop-shadow\" data-v-317d1a6e><div class=\"flex items-center justify-center\" data-v-317d1a6e><img src=\"/images/cutebaby.svg\" alt=\"Name Baby caXos\" class=\"welcome-img\" title=\"Name Baby caXos\" data-v-317d1a6e></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Name Baby caXos </div></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Vamos dar nome ao bebê caXos? </div></div><div class=\"ml-12\" data-v-317d1a6e><div class=\"mt-2 text-gray-800 dark:text-gray-400\" data-v-317d1a6e><!-- &lt;div class=&quot;mt-2 text-gray-600 dark:text-gray-400 text-sm&quot;&gt; --><div data-v-317d1a6e><ol type=\"1\" data-v-317d1a6e><li data-v-317d1a6e>Clique em &quot;Registrar&quot; e preencha seus dados para criar uma conta</li><li data-v-317d1a6e>Já logado, acesse a página &quot;Sugerir Nome&quot;</li><li data-v-317d1a6e>Pronto! Sua sugestão aparecerá no &quot;Dashboard&quot;, <br data-v-317d1a6e>onde também é possíve visualizar as demais sugestões, bem como votar nas sugestões que você acha interessante</li><li data-v-317d1a6e>Você pode fazer quantas sugestões quiser, <br data-v-317d1a6e>mas só pode dar um voto (a favor ou contra) por sugestão</li></ol></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
