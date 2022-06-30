@@ -22026,12 +22026,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-function curtir(id) {
+function curtirBCKP(id) {
   // localUserLikes.push(id);
-  console.log(id, this.localUserLikes.original[0].id_babyname); //so far so good! falta achar o iterador
+  // console.log(id, this.localUserLikes.original[0].id_babyname); //so far so good! falta achar o iterador
+  // console.log(this.localUserLikes.split('id_babyname:'));
+  console.log(this.localUserLikes[0].original);
+  if (this.localUserLikes[0].original.includes('"id_babyname":' + id)) console.log("achei");else console.log("não achei");
 }
 
-function descurtir(id) {// localUserLikes.splice(localUserLikes.findIndex((i) => i === id), 1);
+function descurtirBCKP(id) {// localUserLikes.splice(localUserLikes.findIndex((i) => i === id), 1);
+}
+
+function findLike(id) {
+  for (var i = 0; i < this.localUserLikes[0].original.length; i++) {
+    if (this.localUserLikes[0].original[i].id_babyname === id) {
+      // console.log("findLike achou like de id: ",id);
+      return true;
+    }
+  } // console.log("findLike NÃO achou like de id: ",id);
+
+
+  return false;
+}
+
+function findLikeIndex(id, localUserLikes) {
+  console.log('findLikeIndex', id);
+  console.log('this.localUserLikes', localUserLikes);
+
+  for (var i = 0; i < localUserLikes[0].original.length; i++) {
+    if (localUserLikes[0].original[i].id_babyname === id) {
+      // console.log("findLike achou like de id: ",id);
+      return i;
+    }
+  } // console.log("findLike NÃO achou like de id: ",id);
+
+
+  return -1;
+}
+
+function curtir(id) {
+  // axios.get(route('like',[id]));
+  axios.post(route('like', [id]));
+  this.localLikes++;
+  this.localUserLikes[0].original.push({
+    'id_babyname': id
+  });
+}
+
+function descurtir(id) {
+  console.log('descurtir');
+  axios.post(route('dislike', [id]));
+  console.log('locallikes', this.localLikes);
+  this.localLikes--;
+  console.log('localUserLikes', this.localUserLikes); // console.log('index:', findLikeIndex(id, this.localUserLikes));
+
+  this.localUserLikes[0].original.splice(findLikeIndex(id, this.localUserLikes), 1); // localUserLikes.splice(localUserLikes.findIndex((i) => i === id), 1)
 }
 
 
@@ -22054,16 +22103,23 @@ function descurtir(id) {// localUserLikes.splice(localUserLikes.findIndex((i) =>
     var expose = _ref.expose;
     expose();
     var props = __props; // const localLikes = ref(...likes)
+    // const localUserLikes = ref(props.likes_user)
 
-    var localUserLikes = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.likes_user);
-    var localLikes = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.likes); // const localUserLikes = ref({...props.likes_user});
+    var localLikes = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.likes); // const localUserLikes = ref({...props.likes_user}); //object
+    // const localUserLikes = ref([...props.likes_user]); //array
+
+    var localUserLikes = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)([props.likes_user]); //array
 
     var __returned__ = {
+      curtirBCKP: curtirBCKP,
+      descurtirBCKP: descurtirBCKP,
+      findLike: findLike,
+      findLikeIndex: findLikeIndex,
       curtir: curtir,
       descurtir: descurtir,
       props: props,
-      localUserLikes: localUserLikes,
       localLikes: localLikes,
+      localUserLikes: localUserLikes,
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
       computed: vue__WEBPACK_IMPORTED_MODULE_1__.computed,
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
@@ -23136,15 +23192,33 @@ var _hoisted_1 = {
   "class": "bg-pink-100 hover:bg-pink-100 hover:text-pink-900"
 };
 var _hoisted_2 = {
+  key: 0
+};
+var _hoisted_3 = {
+  key: 1
+};
+var _hoisted_4 = {
   key: 1,
   "class": "bg-blue-100 hover:bg-blue-100 hover:text-blue-900"
 };
-var _hoisted_3 = {
+var _hoisted_5 = {
+  key: 0
+};
+var _hoisted_6 = {
+  key: 1
+};
+var _hoisted_7 = {
   key: 2,
   "class": "bg-gray-100 hover:bg-gray-200 hover:text-gray-900"
 };
+var _hoisted_8 = {
+  key: 0
+};
+var _hoisted_9 = {
+  key: 1
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return $props.gender == 'Feminino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  return $props.gender === 'Feminino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23154,13 +23228,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.localLikes), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action) + " ", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  ), $setup.findLike($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    style: {
+      "color": "green"
+    },
     onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $setup.descurtir($props.action);
+    })
+  }, "Remover Like")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.curtir($props.action);
     })
-  }, "❤")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \"localUserLikes.0.id_babyname\"\n        data.filter(x => x.name === \"Blofeld\"); "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td v-if=\"localUserLikes.includes(action)\">\n            <Link :href=\"route('dislike',[action])\" method=\"post\" as=\"button\" :click=\"descurtir(action)\">\n                <i class=\"fa-regular fa-thumbs-up text-green-600 font-bold\" title=\"Remover Like\"></i>\n            </Link>\n        </td>\n        <td v-else>\n            <Link :href=\"route('like', [action])\" method=\"post\" as=\"button\" :click=\"curtir\">\n                <i class=\"fa-regular fa-thumbs-up text-gray-600\" title=\"Adicionar Like\"></i>\n            </Link>\n        </td> ")])) : $props.gender == 'Masculino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  }, "Dar Like")])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \"localUserLikes.0.id_babyname\"\n        data.filter(x => x.name === \"Blofeld\"); "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td v-if=\"localUserLikes.includes(action)\">\n            <Link :href=\"route('dislike',[action])\" method=\"post\" as=\"button\" :click=\"descurtir(action)\">\n                <i class=\"fa-regular fa-thumbs-up text-green-600 font-bold\" title=\"Remover Like\"></i>\n            </Link>\n        </td>\n        <td v-else>\n            <Link :href=\"route('like', [action])\" method=\"post\" as=\"button\" :click=\"curtir\">\n                <i class=\"fa-regular fa-thumbs-up text-gray-600\" title=\"Adicionar Like\"></i>\n            </Link>\n        </td> ")])) : $props.gender === 'Masculino' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23170,9 +23249,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.localLikes), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action), 1
-  /* TEXT */
-  )])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
+  ), $setup.findLike($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    style: {
+      "color": "green"
+    },
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return $setup.descurtir($props.action);
+    })
+  }, "Remover Like")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    onClick: _cache[3] || (_cache[3] = function ($event) {
+      return $setup.curtir($props.action);
+    })
+  }, "Dar Like")]))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.gender), 1
   /* TEXT */
@@ -23182,9 +23270,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.localLikes), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action), 1
-  /* TEXT */
-  )]));
+  ), $setup.findLike($props.action) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    style: {
+      "color": "green"
+    },
+    onClick: _cache[4] || (_cache[4] = function ($event) {
+      return $setup.descurtir($props.action);
+    })
+  }, "Remover Like")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    onClick: _cache[5] || (_cache[5] = function ($event) {
+      return $setup.curtir($props.action);
+    })
+  }, "Dar Like")]))]));
 }
 
 /***/ }),

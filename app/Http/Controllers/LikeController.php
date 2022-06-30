@@ -23,11 +23,11 @@ class LikeController extends Controller
         $likes = Like::where('id_user',$id_user)->get('id_babyname')->toArray('id_babyname');
         // $likes = Like::where('id_user',$id_user)->get('id_babyname')->toJSON();
         // $likes = Like::where('id_user',$id_user)->get('id_babyname')->toArray();
-        //return $likes;
-        // error_log(response()->json($likes));
         // error_log($likes);
-        // return response()->json($likes);
-        return response($likes);
+        //return $likes;
+        error_log(response()->json($likes));
+        return response()->json($likes);
+        // return response($likes);
     }
 
     public function like(Request $request)
@@ -41,7 +41,8 @@ class LikeController extends Controller
             'id_babyname' => $babyname->id
         ]);
         $like->save();
-        return response()->json('Like adicionado!');
+        // return response()->json('Like adicionado!');
+        return true;
     }
 
     public function dislike(Request $request)
