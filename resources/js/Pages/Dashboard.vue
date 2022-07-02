@@ -5,7 +5,8 @@ import { Head } from '@inertiajs/inertia-vue3';
 
 defineProps({
     sugestoes: Object,
-    likes_user: Object
+    likes_user: Object,
+    loggedUser: Number
     // name: String,
     // gender: String,
     // creator: String,
@@ -70,9 +71,16 @@ $(document).ready(function () {
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <TableRow v-for="sugestao in sugestoes" :key="sugestao.id" :name="sugestao.name"
-                                    :gender="sugestao.gender" :creator="sugestao.creator" :likes="sugestao.likes"
-                                    :created_at="sugestao.created_at" :action="sugestao.id" :likes_user="likes_user" />
+                                <TableRow v-for="sugestao in sugestoes" 
+                                :key="sugestao.id" 
+                                :name="sugestao.name"
+                                :gender="sugestao.gender" 
+                                :creator="sugestao.creator" 
+                                :likes="sugestao.likes"
+                                :created_at="sugestao.created_at" 
+                                :action="sugestao.id" 
+                                :likes_user="likes_user"
+                                :loggedUser="loggedUser" />
                             </tbody>
                         </table>
                     </div>

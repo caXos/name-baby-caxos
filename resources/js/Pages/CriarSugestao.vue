@@ -16,7 +16,17 @@ const form = useForm({
 
 const submit = () => {
     form.post(route('criarsugestao'), {
-        onFinish: () => form.reset('name', 'gender'),
+        onFinish: () => {
+            form.reset('name', 'gender');
+        },
+        // onSuccess: () => {
+        //     Swal.fire({
+        //         title: 'Sucesso',
+        //         text: 'Sugestão criada com sucesso!',
+        //         icon: 'success',
+        //         confirmButtonText: 'Ok'
+        //     })
+        // }
     });
 };
 </script>

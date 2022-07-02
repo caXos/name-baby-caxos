@@ -41,7 +41,7 @@ Route::get('/dashboard', function () {
     // $string = implode(" ",$likes);
     // error_log($string);
 
-    return Inertia::render('Dashboard', ['sugestoes' => $sugestoes, 'likes_user' => $likes]);
+    return Inertia::render('Dashboard', ['sugestoes' => $sugestoes, 'likes_user' => $likes, 'loggedUser'=>$user]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
