@@ -32,11 +32,11 @@ setInterval(function () {
 
             <template v-else>
                 <Link :href="route('login')" class="text-sm text-gray-700 underline">
-                Log in
+                Entrar
                 </Link>
 
                 <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                Register
+                Registrar
                 </Link>
             </template>
         </div>
@@ -54,6 +54,7 @@ setInterval(function () {
             <div class="flex items-center justify-center">
                 <div class="ml-4 text-lg leading-7 font-semibold">
                     Vamos dar nome ao bebê caXos?
+                    <!-- {{ __('Vamos dar nome ao bebê caXos?') }} -->
                 </div>
             </div>
             <div class="ml-12">
@@ -61,9 +62,9 @@ setInterval(function () {
                 <!-- <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm"> -->
                     <div style="max-width: 610px;">
                         <ol type="1">
-                            <li>Clique em "Registrar" e preencha seus dados para criar uma conta</li>
-                            <li>Já logado, acesse a página "Sugerir Nome"</li>
-                            <li>Pronto! Sua sugestão aparecerá no "Dashboard", onde também é possíve visualizar as demais sugestões, bem como votar nas sugestões que você acha interessante</li>
+                            <li>Clique em 'Registrar' e preencha seus dados para criar uma conta</li>
+                            <li>Já logado, acesse a página 'Sugerir Nome'</li>
+                            <li>Pronto! Sua sugestão aparecerá no 'Dashboard', onde também é possíve visualizar as demais sugestões, bem como votar nas sugestões que você acha interessante</li>
                             <li>Você pode fazer quantas sugestões quiser, mas só pode dar um voto a favor por sugestão</li>
                         </ol>
                     </div>

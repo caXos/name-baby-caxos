@@ -24,7 +24,7 @@ const submit = () => {
 
 <template>
     <BreezeGuestLayout>
-        <Head title="Register" />
+        <Head title="Registrar" />
 
         <BreezeValidationErrors class="mb-4" />
 
@@ -58,7 +58,7 @@ const submit = () => {
 
             <div class="flex items-center justify-end mt-4">
                 <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Já tem registro? Clique aqui para fazer login
+                    Já tem registro? Clique aqui para entrar
                 </Link>
 
                 <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">

@@ -23799,13 +23799,13 @@ var _hoisted_7 = {
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Esqueci minha senha ");
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log in ");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Entrar ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BreezeGuestLayout"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
-        title: "Log in"
+        title: "Entrar"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeValidationErrors"], {
         "class": "mb-4"
       }), $props.status ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.status), 1
@@ -23934,7 +23934,7 @@ var _hoisted_8 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Já tem registro? Clique aqui para fazer login ");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Já tem registro? Clique aqui para entrar ");
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Registrar ");
 
@@ -23942,7 +23942,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BreezeGuestLayout"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
-        title: "Register"
+        title: "Registrar"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeValidationErrors"], {
         "class": "mb-4"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
@@ -24600,11 +24600,11 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log in ");
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Entrar ");
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Registrar ");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l bg-white rounded-md border-2 border-gray-400 drop-shadow\" data-v-317d1a6e><div class=\"flex items-center justify-center\" data-v-317d1a6e><img src=\"/images/cutebaby.svg\" alt=\"Name Baby caXos\" class=\"welcome-img\" title=\"Name Baby caXos\" data-v-317d1a6e></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Name Baby caXos </div></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Vamos dar nome ao bebê caXos? </div></div><div class=\"ml-12\" data-v-317d1a6e><div class=\"mt-2 text-gray-800 dark:text-gray-400\" data-v-317d1a6e><!-- &lt;div class=&quot;mt-2 text-gray-600 dark:text-gray-400 text-sm&quot;&gt; --><div style=\"max-width:610px;\" data-v-317d1a6e><ol type=\"1\" data-v-317d1a6e><li data-v-317d1a6e>Clique em &quot;Registrar&quot; e preencha seus dados para criar uma conta</li><li data-v-317d1a6e>Já logado, acesse a página &quot;Sugerir Nome&quot;</li><li data-v-317d1a6e>Pronto! Sua sugestão aparecerá no &quot;Dashboard&quot;, onde também é possíve visualizar as demais sugestões, bem como votar nas sugestões que você acha interessante</li><li data-v-317d1a6e>Você pode fazer quantas sugestões quiser, mas só pode dar um voto a favor por sugestão</li></ol></div></div></div></div>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l bg-white rounded-md border-2 border-gray-400 drop-shadow\" data-v-317d1a6e><div class=\"flex items-center justify-center\" data-v-317d1a6e><img src=\"/images/cutebaby.svg\" alt=\"Name Baby caXos\" class=\"welcome-img\" title=\"Name Baby caXos\" data-v-317d1a6e></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Name Baby caXos </div></div><div class=\"flex items-center justify-center\" data-v-317d1a6e><div class=\"ml-4 text-lg leading-7 font-semibold\" data-v-317d1a6e> Vamos dar nome ao bebê caXos? <!-- {{ __(&#39;Vamos dar nome ao bebê caXos?&#39;) }} --></div></div><div class=\"ml-12\" data-v-317d1a6e><div class=\"mt-2 text-gray-800 dark:text-gray-400\" data-v-317d1a6e><!-- &lt;div class=&quot;mt-2 text-gray-600 dark:text-gray-400 text-sm&quot;&gt; --><div style=\"max-width:610px;\" data-v-317d1a6e><ol type=\"1\" data-v-317d1a6e><li data-v-317d1a6e>Clique em &#39;Registrar&#39; e preencha seus dados para criar uma conta</li><li data-v-317d1a6e>Já logado, acesse a página &#39;Sugerir Nome&#39;</li><li data-v-317d1a6e>Pronto! Sua sugestão aparecerá no &#39;Dashboard&#39;, onde também é possíve visualizar as demais sugestões, bem como votar nas sugestões que você acha interessante</li><li data-v-317d1a6e>Você pode fazer quantas sugestões quiser, mas só pode dar um voto a favor por sugestão</li></ol></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
