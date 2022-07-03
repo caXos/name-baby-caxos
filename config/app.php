@@ -55,9 +55,12 @@ return [
     */
 
     // 'url' => env('APP_URL', 'http://localhost'),
-    'url' => env('APP_URL', 'https://localhost'),
+    // 'asset_url' => env('ASSET_URL','http://localhost'),
+    // 'mix' => env('MIX_ASSET_URL', 'MIX_ASSET_URL'),
 
-    'asset_url' => env('ASSET_URL'),
+    'url' => env('APP_URL', 'https://urchin-app-g2rsa.ondigitalocean.app/'),
+    'asset_url' => env('ASSET_URL','https://urchin-app-g2rsa.ondigitalocean.app/'),
+    'mix' => env('MIX_ASSET_URL', 'https://urchin-app-g2rsa.ondigitalocean.app/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -214,7 +217,4 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
-
-    'mix' => env('APP_URL', 'MIX_ASSET_URL')
 ];
