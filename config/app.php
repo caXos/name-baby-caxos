@@ -215,4 +215,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+
+    'mix' => env('APP_URL', 'MIX_ASSET_URL')
 ];

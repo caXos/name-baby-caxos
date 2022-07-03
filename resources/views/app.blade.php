@@ -11,8 +11,8 @@
         {{-- FontAwesome --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Styles -->
-        <link rel="stylesheet" href='https://urchin-app-g2rsa.ondigitalocean.app/css/app.css'>
-        {{-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> --}}
+        {{-- <link rel="stylesheet" href='https://urchin-app-g2rsa.ondigitalocean.app/css/app.css'> --}}
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         {{-- DataTable CSS --}}
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
         {{-- DataTable CSS Local --}}
@@ -20,8 +20,8 @@
 
         <!-- Scripts -->
         @routes
-        <script src='https://urchin-app-g2rsa.ondigitalocean.app/js/app.js' defer></script>
-        {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
+        {{-- <script src='https://urchin-app-g2rsa.ondigitalocean.app/js/app.js' defer></script> --}}
+        <script src="{{ mix('js/app.js') }}" defer></script>
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
