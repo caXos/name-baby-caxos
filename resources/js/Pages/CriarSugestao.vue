@@ -33,12 +33,12 @@ const submit = () => {
 
 <template>
 
-    <Head title="Sugerir Nome" />
+    <Head title="Sugerir nome" />
 
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Sugerir Nome
+                Sugerir nome
             </h2>
         </template>
 

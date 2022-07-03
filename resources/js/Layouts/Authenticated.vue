@@ -36,6 +36,12 @@ const showingNavigationDropdown = ref(false);
                                     Sugerir nome
                                 </BreezeNavLink>
                             </div>
+                            <!-- Contagem Regressiva -->
+                            <!-- <div class="flex mx-2 justify-items-center align-middle">
+                                <div>
+                                    contagem
+                                </div>
+                            </div> -->
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -56,7 +62,7 @@ const showingNavigationDropdown = ref(false);
 
                                     <template #content>
                                         <BreezeDropdownLink :href="route('logout')" method="post" as="button">
-                                            Log Out
+                                            Sair
                                         </BreezeDropdownLink>
                                     </template>
                                 </BreezeDropdown>
