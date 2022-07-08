@@ -54,13 +54,13 @@ return [
     |
     */
 
-    // 'url' => env('APP_URL', 'http://localhost'),
-    // 'asset_url' => env('ASSET_URL','http://localhost'),
-    // 'mix' => env('MIX_ASSET_URL', 'MIX_ASSET_URL'),
+    'url' => env('APP_URL', 'https://localhost'),
+    'asset_url' => env('ASSET_URL','https://localhost'),
+    'mix' => env('MIX_ASSET_URL', 'https://localhost'),
 
-    'url' => env('APP_URL', 'https://urchin-app-g2rsa.ondigitalocean.app/'),
-    'asset_url' => env('ASSET_URL','https://urchin-app-g2rsa.ondigitalocean.app/'),
-    'mix' => env('MIX_ASSET_URL', 'https://urchin-app-g2rsa.ondigitalocean.app/'),
+    // 'url' => env('APP_URL', 'https://urchin-app-g2rsa.ondigitalocean.app/'),
+    // 'asset_url' => env('ASSET_URL','https://urchin-app-g2rsa.ondigitalocean.app/'),
+    // 'mix' => env('MIX_ASSET_URL', 'https://urchin-app-g2rsa.ondigitalocean.app/'),
 
     /*
     |--------------------------------------------------------------------------
