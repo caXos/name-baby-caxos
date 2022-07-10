@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -30,6 +32,7 @@
             <script src="https://localhost:8080/js/bundle.js"></script>
             {{-- <script src="https://urchin-app-g2rsa.ondigitalocean.app/js/bundle.js"></script> --}}
         @endenv
+        @csrf <!-- {{ csrf_field() }} -->
         {{-- jQuery CDN --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         {{-- jQuery Local --}}
