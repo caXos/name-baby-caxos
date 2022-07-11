@@ -42,17 +42,18 @@ Route::get('/dashboard', function () {
     // error_log($string);
 
     return Inertia::render('Dashboard', ['sugestoes' => $sugestoes, 'likes_user' => $likes, 'loggedUser'=>$user]);
-})->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-
+Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::get('/sugerir', function () {
         return Inertia::render('CriarSugestao');
-    })->name('sugerir');
+    })->middleware(['auth', 'verified'])->name('sugerir');
 
     Route::post('sugerir', [BabyNameController::class, 'store'])->name('criarsugestao');
 
     // Route::get('/liked/{id_babyname}', [LikeController::class, 'getLiked'])->name('getLiked');
     Route::post('/like/{id_babyname}', [LikeController::class, 'like'])->name('like');
     Route::post('/dislike/{id_babyname}', [LikeController::class, 'dislike'])->name('dislike');
+  });
 
 require __DIR__.'/auth.php';
