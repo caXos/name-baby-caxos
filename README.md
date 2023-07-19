@@ -1,64 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Name baby caXos
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Eu ainda não tinha começado a programar em PHP, Laravel e Vue quando eu e minha esposa descobrimos que estávamos esperando um filho ou uma filha, então pensei em criar uma plataforma para sugestão de nomes de bebês, para eu manter foco em um objetivo.
 
-## About Laravel
+Com isso, nasceu a plataforma Name My Baby. No meu caso, como meu apelido é caXos, então o nome da plataforma ficaria “Name baby caXos”, mas pode ser facilmente adaptável.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A plataforma conta com registro de usuário e de nomes de bebês, bem como a possibilidade votar a favor os nomes já cadastrados.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Cada usuário pode sugerir quantos nomes quiser, indicando se o nome é voltado para menino, menina ou neutro. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ainda, cada usuário pode votar a favor de quantos nomes quiser, mas apenas um voto por nome.
 
-## Learning Laravel
+A biblioteca [DataTable.net](http://DataTable.net) cuida de apresentar os nomes em ordem, permitindo ao usuário filtrar, reordenar, baseado no nome, na quantidade de votos, ou pelo gênero.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+É possível, por exemplo, alterar a landing page para constar as “regras” da campanha de nomear o bebê, estipulando prazo limite, ou até eventual recompensa para quem sugeriu o nome com mais votos.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Funcionalidades**
 
-## Laravel Sponsors
+- Cadastro de usuários
+- Cadastro de nomes de bebês
+- Possibilidade de votar a favor de cada nome
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Meu papel neste projeto**
 
-### Premium Partners
+Eu tive a ideia, juntei-a com a possibilidade de aprender PHP, PostgreSQL, Laravel, VueJs e Tailwind CSS, então eu fiz tudo: idealizei e programei as telas, bem como fiz a parte de back. Considerando que eu ainda estava aprendendo, tive uma ajuda do Willian Josefi para resolver a parte de votos.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+**Identidade visual**
 
-## Contributing
+Semi-estravagante, pois é cheio de cores rosa e azul claro. Tailwind CSS
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Período de desenvolvimento**
 
-## Code of Conduct
+Abril 2022 - Julho 2022
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Linguagens, frameworks, plataformas e aplicativos utilizados**
 
-## Security Vulnerabilities
+**Equipe**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Jorge Gomez
 
-## License
+**Planejamento**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Nenhum. Considerei o projeto “finalizado” em julho de 2022, pois já tinha desenvolvido as funções que eu queria testar, e outros projetos apareceram para ocupar meu tempo.
+
+**Imagens**
+
+**Link**
+
+[https://github.com/caXos/name-baby-caxos](https://github.com/caXos/name-baby-caxos)
+
+**Como usar o projeto**
+
+1. Acesse o link acima e clone o repositório
+2. Abra sua IDE de preferência
+3. Renomeie o arquivo .env.example para .env e configure-o, como por exemplo:
+    
+    ```php
+    DB_CONNECTION=pgsql
+    DB_HOST=localhost
+    DB_PORT=5432
+    DB_DATABASE=DEV_namebabycaxos
+    DB_USERNAME=namemybaby
+    DB_PASSWORD=namemybaby
+    ```
+    
+4. Abra um terminal e use os comandos
+    
+    ```powershell
+    npm install
+    npm upgrade
+    composer require inertiajs/inertia-laravel
+    composer install --ignore-platform-reqs
+    composer upgrade
+    php artisan migrate:fresh --seed
+    ```
+
+    
